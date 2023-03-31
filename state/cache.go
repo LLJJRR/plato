@@ -75,7 +75,7 @@ func (cs *cacheState) connLogin(ctx context.Context, did, connID uint64) error {
 	}
 
 	// 添加路由记录
-	endPoint := fmt.Sprintf("%s:%d", config.GetGatewayServiceAddr(), config.GetSateServerPort())
+	endPoint := fmt.Sprintf("%s:%d", config.GetSateServiceAddr(), config.GetSateServerPort())
 	err = router.AddRecord(ctx, did, endPoint, connID)
 	if err != nil {
 		return err
